@@ -1,6 +1,3 @@
-const Greet = module.exports = function(name) {
-  this.name = 'Brandon';
-  this.greet = function() {
-    return 'hello ' + this.name;
-  };
+const greet = module.exports = function(name) {
+  return 'hello ' + this.name;
 };
