@@ -1,6 +1,6 @@
 const Greet = module.exports = function(name) {
-  this.name = 'Brandon';
+  this.name = name;
   this.greet = function() {
-    return 'hello ' + this.name;
+    return 'hello ' + (name || 'world');
   };
 };
