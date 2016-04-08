@@ -1,14 +1,26 @@
 const chai = require('chai');
 const expect = chai.expect;
-const greet = require(__dirname + '/../lib/greeting');
+const greetCli = require(__dirname + '/../bin/greetingBin');
 
-const user = greet('Brandon');
+describe('This greeting cli', () => {
+  before(() => {
+    this.process_backup = process.argv;
+    process.argv = [null, null, 'brandon'];
+  });
+  after(() => {
+    process.argv = this.process_backup;
+  });
 
-describe('This greeting', () => {
   it('should have some response with a name', () => {
-    expect(user.greet()).to.eql('Brandon');
-  })
-  it('should greet the user', ()=>{
-    expect(user.greet()).to.eql('hello ' + user.name);
-  })
-})
+    expect(greetCli()).to.eql('hello brandon');
+  });
+});
+
+  describe('with nada!', () => {
+    before(() => {
+      process.argv = [];
+    });
+    it('should greet universe', () => {
+      expect(greetCli()).to.eql('hello universe');
+    });
+  });
