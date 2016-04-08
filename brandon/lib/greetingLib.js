@@ -1,3 +1,3 @@
-const greeting = module.exports = function(name) {
+module.exports = exports = function(name) {
   return 'hello ' + (name || 'universe');
 };

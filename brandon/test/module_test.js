@@ -14,8 +14,7 @@ describe('This greeting cli', () => {
   it('should have some response with a name', () => {
     expect(greetCli()).to.eql('hello brandon');
   });
-});
-
+  
   describe('with nada!', () => {
     before(() => {
       process.argv = [];
@@ -24,3 +23,4 @@ describe('This greeting cli', () => {
       expect(greetCli()).to.eql('hello universe');
     });
   });
+});

@@ -1,1 +1,3 @@
-module.exports = require(__dirname + "lib/greeting");
+const greetCli = require(__dirname + "/bin/greetingBin");
+
+process.stdout.write(greetCli() + '\n');
